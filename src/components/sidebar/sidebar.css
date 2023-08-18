@@ -1,0 +1,39 @@
+.vp-sidebarComp {
+    background-color: var(--primary-color);
+    height: 100vh;
+    padding: 1rem;
+}
+
+.cp-sidebar-header {
+    position: relative;
+}
+
+.vp-sidebar-toggleBtn {
+    position: absolute;
+    opacity: 0.2;
+    right: 0;
+    bottom: 0;
+    font-size: 1.4rem;
+}
+
+.vp-sidebar-toggleBtn:hover,
+.vp-sidebarComp li:hover {
+    cursor: pointer;
+}
+
+.vp-sidebarComp ul {
+    list-style: none;
+    padding: 1rem 0rem;
+}
+
+.vp-sidebarComp ul>*,
+.vp-sidebar-toggleBtn {
+    color: var(--white);
+}
+
+.vp-sidebarComp li {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem 0rem 0rem 0.1rem;
+}
