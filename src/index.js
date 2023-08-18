@@ -3,16 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { SideBarProvider } from "./context";
 import { BrowserRouter as ReactRouter } from "react-router-dom";
+import { DialogProvider, SideBarProvider, UsersProvider } from "./context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ReactRouter>
-      <SideBarProvider>
-        <App />
-      </SideBarProvider>
+      <UsersProvider>
+        <SideBarProvider>
+          <DialogProvider>
+            <App />
+          </DialogProvider>
+        </SideBarProvider>
+      </UsersProvider>
     </ReactRouter>
   </React.StrictMode>
 );

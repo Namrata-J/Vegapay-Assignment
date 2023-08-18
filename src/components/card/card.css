@@ -1,54 +1,88 @@
 .vp-issueCardComp-cardContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.vp-issueCardComp-cardContainer>*:hover {
-    background-color: var(--secondary-color);
-    cursor: pointer;
+.vp-issueCardComp-cardContainer > *:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
 }
 
 .vp-issueCardComp-card {
-    align-items: center;
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-    justify-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
 }
 
 .vp-card-icon {
-    font-size: 1.5rem;
-    color: var(--primary-color);
+  font-size: 1.5rem;
+  color: var(--primary-color);
 }
 
 .vp-searchByMobNumberComp,
 .vp-searchByMobNumber-innerComp {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .vp-searchByMobNumberComp {
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .vp-searchByMobNumber-innerComp {
-    align-items: flex-end;
-    justify-content: space-between;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.vp-searchByMobNumberBtn {
-    border-radius: 0.3rem;
-    border: 1px solid var(--action);
-    background-color: var(--white);
-    color: var(--action);
-    padding: 0.3rem 0.8rem;
-    font-weight: bolder;
+.vp-availableBranchListComp,
+.vp-table {
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
     font-size: 0.8rem;
+    padding: 1rem 2rem;
+    text-align: start;
 }
 
-.vp-searchByMobNumberBtn:hover {
-    cursor: pointer;
+th {
+    font-weight: bolder;
+}
+
+td {
+    font-weight: light;
+    color: var(--grayShade2);
+}
+
+tbody tr:hover {
+  background-color: var(--grayShade0);
+  cursor: pointer;
+}
+
+#vp-tableHeadingWithIcon {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+#vp-tableheader-icon {
+    color: var(--grayShade2);
+    font-size: 1.1rem;
+}
+
+.vp-table-footer {
+  color: var(--grayShade2);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1rem;
 }

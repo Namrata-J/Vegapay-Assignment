@@ -9,6 +9,7 @@ const Box = ({
   padding,
   border,
   shadow,
+  style,
   children,
 }) => {
   return (
@@ -22,6 +23,7 @@ const Box = ({
         padding: padding ? padding : `0rem`,
         border: border ? border : "",
         boxShadow: shadow,
+        ...style
       }}
     >
       {children}

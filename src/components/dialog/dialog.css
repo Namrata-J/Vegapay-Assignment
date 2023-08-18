@@ -1,0 +1,17 @@
+.vp-dialogComp {
+    background-color: var(--white);
+    border-radius: 0.6rem 0rem 0rem 1rem;
+    box-Shadow: -2px 2px 5px 0px var(--grayShade2);
+    display: flex;
+    flex-direction: column;
+    height: 91.9vh;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30rem;
+    z-index: 2;
+}
+
+.vp-dialogComp-content-container {
+    padding: 1rem;
+}

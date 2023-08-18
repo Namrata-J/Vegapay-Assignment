@@ -6,7 +6,10 @@ import {
   SideBar,
   IssueCard,
   SearchByMobNumber,
+  AvailableBranchesList,
+  Dialog,
 } from "../components";
+import { useDialog } from "../context";
 
 const CardSale = () => {
   const boxes = [
@@ -32,17 +35,20 @@ const CardSale = () => {
       width: "100%",
       height: "auto",
       roundness: "1.2rem",
-      bgColor: "var(--white)",
+      bgColor: "var(--grayShade)",
       shadow: "0px 0px 5px 1px var(--grayShade0)",
-      children: <></>,
+      children: <AvailableBranchesList />,
     },
   ];
+
+  const { showDialog } = useDialog();
 
   return (
     <div className="vp-cardsalePage">
       <SideBar />
       <div className="vp-cardsale-main-container">
         <Header />
+        {showDialog && <div className="vp-cardSale-content-opaqueLayer"></div>}
         <div className="vp-cardsale-content">
           {boxes &&
             boxes.length > 0 &&
@@ -60,6 +66,7 @@ const CardSale = () => {
               </Box>
             ))}
         </div>
+        {showDialog && <Dialog />}
       </div>
     </div>
   );

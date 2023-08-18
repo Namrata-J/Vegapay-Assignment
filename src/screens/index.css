@@ -18,8 +18,18 @@
 .vp-cardsale-content {
     margin-top: 8vh;
     padding: 2rem 3rem;
+    height: 92vh;
+    overflow: scroll;
 }
 
 .vp-cardsale-content>* {
     margin-bottom: 2.5rem;
+}
+
+.vp-cardSale-content-opaqueLayer {
+    position: absolute;
+    background-color: var(--opaqueBlack);
+    height: 100%;
+    width: 100%;
+    z-index: 1;
 }
