@@ -18,7 +18,7 @@ const CardSale = () => {
       roundness: "1.2rem",
       bgColor: "var(--white)",
       padding: "1.5rem 2.5rem",
-      shadow: "0px 0px 5px 1px var(--grayShade0)",
+      shadow: "0px 0px 3px 0px var(--grayShade1)",
       children: <IssueCard />,
     },
     {
@@ -26,14 +26,14 @@ const CardSale = () => {
       roundness: "1.2rem",
       bgColor: "var(--white)",
       padding: "1.5rem 2.5rem",
-      shadow: "0px 0px 5px 1px var(--grayShade0)",
+      shadow: "0px 0px 3px 0px var(--grayShade1)",
       children: <SearchByMobNumber />,
     },
     {
       height: "auto",
       roundness: "1.2rem",
-      bgColor: "var(--grayShade)",
-      shadow: "0px 0px 5px 1px var(--grayShade0)",
+      bgColor: "var(--grayShade0)",
+      shadow: "0px 0px 3px 0px var(--grayShade1)",
       children: <AvailableBranchesList />,
     },
   ];

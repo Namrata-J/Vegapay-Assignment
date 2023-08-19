@@ -11,7 +11,7 @@
 .vp-sidebar-toggleBtn {
   position: absolute;
   opacity: 0.2;
-  right: 10px;
+  right: 15px;
   bottom: 0;
   font-size: 25px;
 }
@@ -37,7 +37,7 @@
 .vp-sidebarComp a.active {
   background-color: var(--opaqueAction);
   padding: 1rem;
-  border-left: 8px solid var(--action);
+  border-left: 8px solid var(--selectedTile);
 }
 
 .vp-sidebarComp li {

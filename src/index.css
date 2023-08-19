@@ -10,20 +10,21 @@
 }
 
 :root {
-  --primary-color: #141758;
-  --secondary-color: #f1f3f4;
-  --action: #618AF1;
+  --primary-color: #0c0e38;
+  --secondary-color: #eaecf0;
+  --action: #507EF3;
   --white: #FFFFFF;
   --black: #000000;
-  --grayShade: #F5F6F6;
-  --grayShade0: #DFDFE0;
-  --grayShade1: #BCBEC1;
-  --grayShade2: #5A5A5C;
-  --opaqueAction: rgba(78, 124, 215, 0.1);
+  --grayShade: #f9f9f9;
+  --grayShade0: #f0f0f0;
+  --grayShade1: #d3d4d6;
+  --grayShade2: #6c6c6e;
+  --opaqueAction: rgba(255, 255, 255, 0.1);
   --opaqueBlack: rgba(0, 0, 0, 0.5);
   --error: #c02424;
   --success: #47a879;
   --warning: #C18B49;
+  --selectedTile: rgb(69, 152, 240);
   --opaqueSuccess: rgba(136, 251, 195, 0.9);
   --opaqueError: rgba(252, 135, 135, 0.9);
   --opaqueWarning: rgba(253, 225, 125, 0.9);

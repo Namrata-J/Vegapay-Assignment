@@ -73,11 +73,11 @@ td {
 }
 
 tbody tr:nth-child(1n) {
-  background-color: var(--white);
+  background-color: var(--grayShade);
 }
 
 tbody tr:nth-child(2n) {
-  background-color: var(--grayShade);
+  background-color: var(--grayShade0);
 }
 
 tbody tr:hover {
@@ -98,7 +98,7 @@ tbody tr:hover {
 
 .vp-table-footer {
   border-radius: 0rem 0rem 1.2rem 1.2rem;
-  background-color: var(--grayShade);
+  background-color: var(--grayShade0);
   color: var(--grayShade2);
   display: flex;
   justify-content: flex-end;

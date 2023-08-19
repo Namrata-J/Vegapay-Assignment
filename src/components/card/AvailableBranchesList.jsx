@@ -136,14 +136,14 @@ const AvailableBranchesList = () => {
                         text={
                           userInfo?.customer?.makerCheckerStatus
                             ? userInfo?.customer?.makerCheckerStatus.includes(
-                                "PENDING"
-                              )
+                              "PENDING"
+                            )
                               ? "Pending"
                               : userInfo?.customer?.makerCheckerStatus.includes(
-                                  "APPROVED"
-                                )
-                              ? "Approved"
-                              : "Rejected"
+                                "APPROVED"
+                              )
+                                ? "Approved"
+                                : "Rejected"
                             : "Rejected"
                         }
                         style={{
@@ -151,36 +151,36 @@ const AvailableBranchesList = () => {
                           backgroundColor: userInfo?.customer
                             ?.makerCheckerStatus
                             ? userInfo?.customer?.makerCheckerStatus.includes(
-                                "APPROVED"
-                              )
+                              "APPROVED"
+                            )
                               ? "var(--opaqueSuccess)"
                               : userInfo?.customer?.makerCheckerStatus.includes(
-                                  "PENDING"
-                                )
-                              ? "var(--opaqueWarning)"
-                              : "var(--opaqueError)"
+                                "PENDING"
+                              )
+                                ? "var(--opaqueWarning)"
+                                : "var(--opaqueError)"
                             : "var(--opaqueError)",
                           border: userInfo?.customer?.makerCheckerStatus
                             ? userInfo?.customer?.makerCheckerStatus.includes(
-                                "APPROVED"
-                              )
+                              "APPROVED"
+                            )
                               ? "0px solid var(--opaqueSuccess)"
                               : userInfo?.customer?.makerCheckerStatus.includes(
-                                  "PENDING"
-                                )
-                              ? "0px solid var(--opaqueWarning)"
-                              : "0px solid var(--opaqueError)"
+                                "PENDING"
+                              )
+                                ? "0px solid var(--opaqueWarning)"
+                                : "0px solid var(--opaqueError)"
                             : "0px solid var(--opaqueError)",
                           color: userInfo?.customer?.makerCheckerStatus
                             ? userInfo?.customer?.makerCheckerStatus.includes(
-                                "APPROVED"
-                              )
+                              "APPROVED"
+                            )
                               ? "var(--success)"
                               : userInfo?.customer?.makerCheckerStatus.includes(
-                                  "PENDING"
-                                )
-                              ? "var(--warning)"
-                              : "var(--error)"
+                                "PENDING"
+                              )
+                                ? "var(--warning)"
+                                : "var(--error)"
                             : "var(--error)",
                           padding: "0.3rem 0.8rem",
                           fontWeight: "bolder",
@@ -290,7 +290,7 @@ const AvailableBranchesList = () => {
       </table>
       <div className="vp-table-footer">
         <Typography
-          text={`1 of ${usersTable.length} of ${usersTable.length}`}
+          text={`${usersTable.length > 0 ? "1" : "0"}-${usersTable.length} of ${usersTable.length}`}
           size="0.8"
           weight="bold"
           color="var(--grayShade2)"
