@@ -3,97 +3,198 @@ import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import { Button, Typography } from "../util";
 import { useUsers } from "../../context/users-context";
 import { useDialog } from "../../context";
+import { tableHeading } from "../../constants/tableHeading";
 
 const AvailableBranchesList = () => {
   const { usersTable, tabType } = useUsers();
-  const { setDialogType, setShowDialog, dialogType, setDialogDropdownContent } = useDialog();
+  const { setDialogType, setShowDialog, setDialogDropdownContent } =
+    useDialog();
 
   return (
     <div className="vp-availableBranchListComp" style={{ overflowX: "scroll" }}>
       <table className="vp-table">
         <thead>
           <tr>
-            {usersTable?.data?.tableHeading &&
-              usersTable?.data?.tableHeading.length > 0 &&
-              usersTable?.data?.tableHeading.map((heading, index) => (
-                <th key={index}>{heading}</th>
-              ))}
+            {tableHeading[tabType].map((heading, index) => (
+              <th key={index}>{heading}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {usersTable?.data?.users &&
-            usersTable?.data?.users.length > 0 &&
-            usersTable?.data?.users.map((userInfo, index) => (
+          {usersTable &&
+            usersTable?.length > 0 &&
+            usersTable.map((userInfo, index) => (
               <tr key={index}>
-                {userInfo?.kitNumber && <td>{userInfo?.kitNumber}</td>}
-                {userInfo?.name && <td>{userInfo?.name}</td>}
-                {userInfo?.program && <td>{userInfo?.program}</td>}
-                {userInfo?.customerId && <td>{userInfo?.customerId}</td>}
-                {userInfo?.number && (
+                {tabType === "Reissue" ? (
+                  userInfo?.card?.kitId ? (
+                    <td>{userInfo?.card?.kitId}</td>
+                  ) : (
+                    <td>-</td>
+                  )
+                ) : null}
+                {userInfo?.customer && (
                   <td>
-                    <Typography
-                      text={userInfo?.number
-                        .split("")
-                        .map((int, index) =>
-                          index > 1 && index < userInfo?.number.length - 2
-                            ? "x"
-                            : int
-                        )}
-                      color="var(--action)"
-                      size="0.8"
-                      textStyle={{
-                        backgroundColor: "var(--opaqueAction)",
-                        padding: "0rem 0.5rem",
-                        borderRadius: "3px",
-                      }}
-                      style={{
-                        display: "flex",
-                      }}
-                    />
+                    {userInfo?.customer?.firstName
+                      ? userInfo?.customer?.firstName.length > 10
+                        ? `${userInfo?.customer?.firstName.slice(0, 10)}...`
+                        : userInfo?.customer?.firstName
+                      : "-"}
                   </td>
                 )}
-                {userInfo?.email && <td>{userInfo?.email}</td>}
-                {userInfo?.mobile && <td>{userInfo?.mobile}</td>}
-                {userInfo?.cardNetwork && <td>{userInfo?.cardNetwork}</td>}
-                {userInfo?.expiry &&
-                  !(dialogType === "VIEW" && tabType === "Kit") && (
-                    <td>{userInfo?.expiry}</td>
-                  )}
-                {userInfo?.activation && <td>{userInfo?.activation}</td>}
-                {userInfo?.status ? (
-                  <td>
-                    <Button
-                      text={userInfo?.status}
-                      style={{
-                        borderRadius: "0.3rem",
-                        backgroundColor:
-                          userInfo?.status.toUpperCase() === "APPROVED"
-                            ? "var(--opaqueSuccess)"
-                            : userInfo?.status.toUpperCase() === "REJECTED"
-                            ? "var(--opaqueError)"
-                            : "var(--opaqueWarning)",
-                        border:
-                          userInfo?.status.toUpperCase() === "APPROVED"
-                            ? "0px solid var(--opaqueSuccess)"
-                            : userInfo?.status.toUpperCase() === "REJECTED"
-                            ? "0px solid var(--opaqueError)"
-                            : "0px solid var(--opaqueWarning)",
-                        color:
-                          userInfo?.status.toUpperCase() === "APPROVED"
-                            ? "var(--success)"
-                            : userInfo?.status.toUpperCase() === "REJECTED"
-                            ? "var(--error)"
-                            : "var(--warning)",
-                        padding: "0.3rem 0.8rem",
-                        fontWeight: "bolder",
-                        fontSize: "0.8rem",
-                        width: "80px",
-                      }}
-                    />
-                  </td>
+                {tabType !== "Kit" ? (
+                  userInfo?.account ? (
+                    <td>
+                      {userInfo?.account?.programName
+                        ? userInfo?.account?.programName.length > 10
+                          ? `${userInfo?.account?.programName.slice(0, 10)}...`
+                          : userInfo?.account?.programName
+                        : "-"}
+                    </td>
+                  ) : (
+                    <td>-</td>
+                  )
                 ) : null}
-                {usersTable?.tabName === "Kit" ? (
-                  userInfo?.isVerified ? (
+                {tabType !== "Kit" ? (
+                  userInfo?.customer ? (
+                    <td>
+                      {userInfo?.customer?.customerId
+                        ? userInfo?.customer?.customerId.length > 10
+                          ? `${userInfo?.customer?.customerId.slice(0, 10)}...`
+                          : userInfo?.customer?.customerId
+                        : "-"}
+                    </td>
+                  ) : (
+                    <td>-</td>
+                  )
+                ) : null}
+                <td>
+                  <Typography
+                    text={userInfo?.card ? userInfo?.card?.cardNumber : "-"}
+                    color="var(--action)"
+                    size="0.8"
+                    textStyle={{
+                      backgroundColor: "var(--opaqueAction)",
+                      padding: "0rem 0.5rem",
+                      borderRadius: "3px",
+                    }}
+                    style={{
+                      display: "flex",
+                    }}
+                  />
+                </td>
+                {tabType === "Kit" ? (
+                  userInfo?.customer ? (
+                    <td>{userInfo?.customer?.emailId}</td>
+                  ) : (
+                    <td>-</td>
+                  )
+                ) : null}
+                {tabType === "Kit" ? (
+                  userInfo?.customer ? (
+                    <td>{userInfo?.customer?.mobileNumber}</td>
+                  ) : (
+                    <td>-</td>
+                  )
+                ) : null}
+                {tabType === "Kit" ? (
+                  userInfo?.card ? (
+                    <td>
+                      {userInfo?.card?.cardProcessorVendor
+                        ? userInfo?.card?.cardProcessorVendor
+                        : "-"}
+                    </td>
+                  ) : (
+                    <td>-</td>
+                  )
+                ) : null}
+                {tabType !== "Kit" ? (
+                  userInfo?.card ? (
+                    <td>
+                      {userInfo?.card?.expiryDate
+                        ? userInfo?.card?.expiryDate
+                        : "-"}
+                    </td>
+                  ) : (
+                    <td>-</td>
+                  )
+                ) : null}
+                {tabType !== "Kit" ? (
+                  userInfo?.card ? (
+                    <td>
+                      {userInfo?.card?.expiryDate
+                        ? userInfo?.card?.expiryDate
+                        : "-"}
+                    </td>
+                  ) : (
+                    <td>-</td>
+                  )
+                ) : null}
+                {tabType !== "Kit" ? (
+                  userInfo?.customer ? (
+                    <td>
+                      <Button
+                        text={
+                          userInfo?.customer?.makerCheckerStatus
+                            ? userInfo?.customer?.makerCheckerStatus.includes(
+                                "PENDING"
+                              )
+                              ? "Pending"
+                              : userInfo?.customer?.makerCheckerStatus.includes(
+                                  "APPROVED"
+                                )
+                              ? "Approved"
+                              : "Rejected"
+                            : "Rejected"
+                        }
+                        style={{
+                          borderRadius: "0.3rem",
+                          backgroundColor: userInfo?.customer
+                            ?.makerCheckerStatus
+                            ? userInfo?.customer?.makerCheckerStatus.includes(
+                                "APPROVED"
+                              )
+                              ? "var(--opaqueSuccess)"
+                              : userInfo?.customer?.makerCheckerStatus.includes(
+                                  "PENDING"
+                                )
+                              ? "var(--opaqueWarning)"
+                              : "var(--opaqueError)"
+                            : "var(--opaqueError)",
+                          border: userInfo?.customer?.makerCheckerStatus
+                            ? userInfo?.customer?.makerCheckerStatus.includes(
+                                "APPROVED"
+                              )
+                              ? "0px solid var(--opaqueSuccess)"
+                              : userInfo?.customer?.makerCheckerStatus.includes(
+                                  "PENDING"
+                                )
+                              ? "0px solid var(--opaqueWarning)"
+                              : "0px solid var(--opaqueError)"
+                            : "0px solid var(--opaqueError)",
+                          color: userInfo?.customer?.makerCheckerStatus
+                            ? userInfo?.customer?.makerCheckerStatus.includes(
+                                "APPROVED"
+                              )
+                              ? "var(--success)"
+                              : userInfo?.customer?.makerCheckerStatus.includes(
+                                  "PENDING"
+                                )
+                              ? "var(--warning)"
+                              : "var(--error)"
+                            : "var(--error)",
+                          padding: "0.3rem 0.8rem",
+                          fontWeight: "bolder",
+                          fontSize: "0.8rem",
+                          width: "80px",
+                        }}
+                      />
+                    </td>
+                  ) : (
+                    <td>-</td>
+                  )
+                ) : null}
+                {tabType === "Kit" ? (
+                  userInfo?.account ? (
                     <td>
                       <Button
                         text="View"
@@ -138,7 +239,7 @@ const AvailableBranchesList = () => {
                       />
                     </td>
                   )
-                ) : usersTable?.tabName === "Personalised Sale" ? (
+                ) : tabType === "Personalised Sale" ? (
                   <td>
                     <Button
                       text="View"
@@ -189,7 +290,7 @@ const AvailableBranchesList = () => {
       </table>
       <div className="vp-table-footer">
         <Typography
-          text="2 of 2"
+          text={`1 of ${usersTable.length} of ${usersTable.length}`}
           size="0.8"
           weight="bold"
           color="var(--grayShade2)"

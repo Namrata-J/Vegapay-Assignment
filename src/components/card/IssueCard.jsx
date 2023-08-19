@@ -2,15 +2,9 @@ import "./card.css";
 import { useUsers } from "../../context";
 import { Box, Typography } from "../util";
 import { FaUserCircle } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import { UsersData } from "../../constants/UsersData";
+import { cards } from "../../constants/tabs";
 
 const IssueCard = () => {
-  const [cards, setCards] = useState([]);
-
-  useEffect(() => {
-    setCards(() => Object.keys({ ...UsersData }));
-  }, []);
 
   const { setTabType } = useUsers();
 

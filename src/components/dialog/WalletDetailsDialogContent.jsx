@@ -10,30 +10,30 @@ const WalletDetailsDialogContent = () => {
     {
       id: "vp-customer-id",
       label: "Customer ID",
-      value: dialogDropdownContent?.customerId,
+      value: dialogDropdownContent?.customer ? dialogDropdownContent?.customer?.customerId : "-",
       type: "text",
       disabled: true,
     },
     {
       id: "vp-name",
       label: "Name on Card",
-      value: dialogDropdownContent?.name,
+      value: dialogDropdownContent?.customer ? dialogDropdownContent?.customer?.fullName : "-",
       type: "text",
       disabled: false,
     },
     {
       id: "vp-oldcard-no",
       label: "Old Card Number",
-      value: dialogDropdownContent?.number,
+      value: dialogDropdownContent?.card ? dialogDropdownContent?.customer?.cardNumber : "-",
       type: "text",
-      disabled: true,
+      disabled: false,
     },
     {
       id: "vp-hit number",
       label: "Kit Number",
-      value: dialogDropdownContent?.kitNumber,
+      value: dialogDropdownContent?.card?.kitId ? dialogDropdownContent?.card?.kitId : "-",
       type: "text",
-      disabled: true,
+      disabled: false,
     },
   ];
 
@@ -41,23 +41,27 @@ const WalletDetailsDialogContent = () => {
     {
       id: "vp-card-no",
       label: "Card No",
-      value: dialogDropdownContent?.number,
+      value: dialogDropdownContent?.card ? dialogDropdownContent?.customer?.cardNumber : "-",
       type: "text",
-      disabled: true,
+      disabled: false,
       placeholder: "",
     },
     {
       id: "vp-expiry-date",
       label: null,
-      value: null,
+      value: dialogDropdownContent?.card
+        ? dialogDropdownContent?.card?.expiryDate
+        : "-",
       type: "date",
       disabled: false,
       placeholder: "Expiry Date",
     },
     {
-      id: "vp-card-no",
+      id: "vp-activation-date",
       label: null,
-      value: null,
+      value: dialogDropdownContent?.card
+        ? dialogDropdownContent?.card?.expiryDate
+        : "-",
       type: "date",
       disabled: false,
       placeholder: "Activation Date",
