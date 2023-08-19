@@ -3,7 +3,9 @@ import React, { useContext, createContext, useState } from "react";
 const dialogContext = createContext(null);
 
 const DialogProvider = ({ children }) => {
+  const [dialogType, setDialogType] = useState("");
   const [showDialog, setShowDialog] = useState(false);
+  const [dialogDropdownContent, setDialogDropdownContent] = useState({});
 
   const toggleDialogDisplay = () => {
     setShowDialog((prev) => !prev);
@@ -13,8 +15,12 @@ const DialogProvider = ({ children }) => {
     <dialogContext.Provider
       value={{
         showDialog,
+        dialogType,
         setShowDialog,
+        setDialogType,
         toggleDialogDisplay,
+        dialogDropdownContent,
+        setDialogDropdownContent,
       }}
     >
       {children}

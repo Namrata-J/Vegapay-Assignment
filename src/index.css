@@ -20,4 +20,10 @@
   --grayShade2: #5A5A5C;
   --opaqueAction: rgba(78, 124, 215, 0.1);
   --opaqueBlack: rgba(0, 0, 0, 0.5);
+  --error: #c02424;
+  --success: #47a879;
+  --warning: #C18B49;
+  --opaqueSuccess: rgba(136, 251, 195, 0.9);
+  --opaqueError: rgba(252, 135, 135, 0.9);
+  --opaqueWarning: rgba(253, 225, 125, 0.9);
 }

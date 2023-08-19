@@ -9,7 +9,7 @@ import {
   AvailableBranchesList,
   Dialog,
 } from "../components";
-import { useDialog } from "../context";
+import { useDialog, useSideBar } from "../context";
 
 const CardSale = () => {
   const boxes = [
@@ -42,11 +42,15 @@ const CardSale = () => {
   ];
 
   const { showDialog } = useDialog();
+  const { showSidebar } = useSideBar();
 
   return (
     <div className="vp-cardsalePage">
       <SideBar />
-      <div className="vp-cardsale-main-container">
+      <div
+        className="vp-cardsale-main-container"
+        style={{ width: showSidebar ? "85%" : "100%" }}
+      >
         <Header />
         {showDialog && <div className="vp-cardSale-content-opaqueLayer"></div>}
         <div className="vp-cardsale-content">

@@ -10,13 +10,13 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ReactRouter>
-      <UsersProvider>
-        <SideBarProvider>
-          <DialogProvider>
+      <SideBarProvider>
+        <DialogProvider>
+          <UsersProvider>
             <App />
-          </DialogProvider>
-        </SideBarProvider>
-      </UsersProvider>
+          </UsersProvider>
+        </DialogProvider>
+      </SideBarProvider>
     </ReactRouter>
   </React.StrictMode>
 );

@@ -1,29 +1,12 @@
 import "./dialog.css";
-import React, { useReducer } from "react";
+import React, { useState } from "react";
 import { Dropdown } from "../util";
 
 const CreateAccountDialogContent = () => {
 
-  const initialState = {
-    showProgramDropdown: true,
-    showCorporateDropdown: true,
-  };
+    const [programType, setProgramType] = useState('');
 
-  const createAccountDialogReducer = (state, action) => {
-    switch(action?.type) {
-        case "ALL": return {...state, showProgramDropdown: true, showCorporateDropdown: true};
-        case "RETAIL": return {...state, showProgramDropdown: true, showCorporateDropdown: false};
-        case "CORPORATE": return {...state, showProgramDropdown: true, showCorporateDropdown: true};
-        default: return state
-    }
-  }
-
-  const [stateOfCreateAccountDialog, dispatchCreateAccountDialog] = useReducer(
-    createAccountDialogReducer,
-    initialState
-  );
-
-  const DropdownsList = () => [
+  const dropdownsList = [
     {
       id: "vp-program-type",
       label: "Program Type",
@@ -31,22 +14,32 @@ const CreateAccountDialogContent = () => {
       show: true,
     },
     {
-        id: "vp-program-type",
-        label: "Program Type",
-        list: ["All", "Program", "Corporate"],
-        show: stateOfCreateAccountDialog?.showProgramDropdown,
-      },
-      {
-        id: "vp-program-type",
-        label: "Program Type",
-        list: ["All", "Program", "Corporate"],
-        show: stateOfCreateAccountDialog?.showCorporateDropdown,
-      },
+      id: "vp-program-name",
+      label: "Program Name",
+      list: ["Corporate Program"],
+      show: true,
+    },
+    {
+      id: "vp-corporate-name",
+      label: "Corporate Name",
+      list: ["Corp1", "Corp1"],
+      show: programType === "CORPORATE" ? true : false
+    },
   ];
 
   return (
     <div className="vp-createAccountDialogContentComp">
-      <Dropdown />
+      {dropdownsList &&
+        dropdownsList.length &&
+        dropdownsList.map((dropDown) => (
+          <Dropdown
+            id={dropDown?.id}
+            label={dropDown?.label}
+            list={dropDown?.list}
+            show={dropDown?.show}
+            setProgramType={setProgramType}
+          />
+        ))}
     </div>
   );
 };

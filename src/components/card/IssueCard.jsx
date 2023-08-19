@@ -1,22 +1,19 @@
 import "./card.css";
+import { useUsers } from "../../context";
 import { Box, Typography } from "../util";
 import { FaUserCircle } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { UsersData } from "../../constants/UsersData";
 
 const IssueCard = () => {
-  const cards = [
-    {
-      icon: <FaUserCircle className="vp-card-icon" />,
-      text: "Kit",
-    },
-    {
-      icon: <FaUserCircle className="vp-card-icon" />,
-      text: "Personalized Sale",
-    },
-    {
-      icon: <FaUserCircle className="vp-card-icon" />,
-      text: "Reissue",
-    },
-  ];
+
+const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    setCards(() => Object.keys({...UsersData}))
+  }, []);
+
+  const { setTabType } = useUsers();
 
   return (
     <div className="vp-issueCardComp">
@@ -47,10 +44,11 @@ const IssueCard = () => {
               padding={"1.5rem 1rem"}
               border={"1px solid var(--grayShade0)"}
               key={index}
+              onClickFn={() => setTabType(card)}
             >
               <div className="vp-issueCardComp-card" key={index}>
-                {card?.icon}
-                <Typography text={card?.text} />
+                <FaUserCircle className="vp-card-icon" />
+                <Typography text={card} />
               </div>
             </Box>
           ))}

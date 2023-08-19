@@ -11,6 +11,7 @@ const Box = ({
   shadow,
   style,
   children,
+  onClickFn
 }) => {
   return (
     <div
@@ -25,6 +26,7 @@ const Box = ({
         boxShadow: shadow,
         ...style
       }}
+      onClick={onClickFn}
     >
       {children}
     </div>

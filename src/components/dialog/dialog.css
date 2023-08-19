@@ -15,3 +15,30 @@
 .vp-dialogComp-content-container {
     padding: 1rem;
 }
+
+.vp-createAccountDialogContentComp,
+.vp-createDetailsDialogContentComp,
+.vp-viewtDialogContentComp {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.vp-dialogComp-footer {
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0px -3px 3px 0px var(--grayShade0);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+
+.vp-dialog-inputsInGridView {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1rem;
+}

@@ -1,11 +1,25 @@
-import React, { useContext, createContext, useEffect } from "react";
+import React, { useContext, createContext, useEffect, useState } from "react";
+import { UsersData } from "../constants/UsersData";
 
 const usersContext = createContext(null);
 
 const UsersProvider = ({ children }) => {
-  useEffect(() => {}, []);
+  const [tabType, setTabType] = useState(Object.keys({ ...UsersData })?.[0]);
+  const [usersTable, setUsersTable] = useState(
+    UsersData[Object.keys({ ...UsersData })?.[0]]
+  );
 
-  return <usersContext.Provider value={{}}>{children}</usersContext.Provider>;
+  useEffect(() => {
+    setUsersTable(UsersData[tabType]);
+  }, [tabType]);
+
+  return (
+    <usersContext.Provider
+      value={{ usersTable, setUsersTable, tabType, setTabType }}
+    >
+      {children}
+    </usersContext.Provider>
+  );
 };
 
 const useUsers = () => useContext(usersContext);

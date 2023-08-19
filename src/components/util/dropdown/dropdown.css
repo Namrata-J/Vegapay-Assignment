@@ -1,5 +1,6 @@
 .vp-dropdownComp {
     position: relative;
+    flex-grow: 1;
 }
 
 .vp-dropdownComp label {
@@ -10,6 +11,7 @@
     top: -8px;
     left: 15px;
     padding: 0rem 0.5rem;
+    z-index: 2;
 }
 
 .vp-dropdownComp select {
@@ -23,4 +25,3 @@
 .vp-hide-listBtn {
     -webkit-appearance: none;
   }
-

@@ -1,12 +1,12 @@
 import "./header.css";
 import React from "react";
 import { Typography } from "../util";
+import { useSideBar } from "../../context";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useDialog, useSideBar } from "../../context";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const Header = () => {
-  const { toggleDialogDisplay } = useDialog();
+
   const { showSidebar, toggleSideBar } = useSideBar();
 
   return (
@@ -32,7 +32,6 @@ const Header = () => {
         />
         <MdOutlineKeyboardArrowDown
           className="vp-headerComp-dialogToggleBtn"
-          onClick={toggleDialogDisplay}
         />
       </div>
     </div>

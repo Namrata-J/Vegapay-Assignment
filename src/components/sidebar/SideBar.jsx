@@ -23,7 +23,7 @@ const SideBar = () => {
     <div
       className="vp-sidebarComp"
       style={{
-        width: `${SIDEBAR_WIDTH}rem`,
+        minWidth: `${SIDEBAR_WIDTH}%`,
         display: showSidebar ? 'block' : 'none'
       }}
     >
