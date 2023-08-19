@@ -13,7 +13,7 @@ const AvailableBranchesList = () => {
   return (
     <div className="vp-availableBranchListComp" style={{ overflowX: "scroll" }}>
       <table className="vp-table">
-        <thead>
+        <thead className="vp-table-headings">
           <tr>
             {tableHeading[tabType].map((heading, index) => (
               <th key={index}>{heading}</th>
