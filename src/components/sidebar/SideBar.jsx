@@ -36,7 +36,7 @@ const SideBar = () => {
         />
         <BsFillArrowLeftCircleFill className="vp-sidebar-toggleBtn" onClick={toggleSideBar} />
       </div>
-      <ul>
+      <ul onClick={() => toggleSideBar()}>
         {sideBarList &&
           sideBarList.length > 0 &&
           sideBarList.map((listItem, index) => (
