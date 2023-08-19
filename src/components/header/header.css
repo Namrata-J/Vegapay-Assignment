@@ -1,0 +1,30 @@
+.vp-headerComp {
+    align-items: center;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    height: 8vh;
+    padding: 0rem 1rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.vp-headerComp-hamburger {
+    font-size: 1.5rem;
+}
+
+.vp-headerComp-hamburger:hover,
+.vp-headerComp-dialogToggleBtn-container:hover {
+    cursor: pointer;
+}
+
+.vp-headerComp-dialogToggleBtn-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.vp-headerComp-dialogToggleBtn {
+    font-size: 1.2rem;
+}

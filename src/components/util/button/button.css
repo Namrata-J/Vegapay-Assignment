@@ -1,0 +1,7 @@
+.vp-buttonComp:hover {
+    cursor: pointer;
+}
+
+.vp-buttonComp {
+    text-wrap: nowrap;
+}

@@ -1,0 +1,27 @@
+.vp-dropdownComp {
+    position: relative;
+    flex-grow: 1;
+}
+
+.vp-dropdownComp label {
+    background-color: var(--white);
+    color: var(--grayShade1);
+    font-size: 0.6rem;
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    padding: 0rem 0.5rem;
+    z-index: 2;
+}
+
+.vp-dropdownComp select {
+    border-radius: 0.5rem;
+    border: 1px solid var(--grayShade0);
+    padding: 0.5rem;
+    width: 100%;
+    outline: none;
+}
+
+.vp-hide-listBtn {
+    -webkit-appearance: none;
+  }
