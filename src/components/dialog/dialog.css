@@ -42,3 +42,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem 1rem;
 }
+
+@media only screen and (max-width: 510px) {
+    .vp-dialogComp {
+        width: 24rem;
+    }
+  }

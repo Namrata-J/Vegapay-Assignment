@@ -13,7 +13,7 @@
   opacity: 0.2;
   right: 0;
   bottom: 0;
-  font-size: 1.4rem;
+  font-size: 25px;
 }
 
 .vp-sidebar-toggleBtn:hover,
@@ -40,7 +40,7 @@
 
 @media only screen and (max-width: 950px) {
   .vp-sidebarComp {
-    min-width: 12rem !important;
+    min-width: 22rem !important;
     position: absolute;
     z-index: 9;
   }
