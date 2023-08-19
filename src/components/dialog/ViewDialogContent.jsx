@@ -10,13 +10,15 @@ const ViewDialogContent = () => {
     {
       id: "vp-account-id",
       label: "Account ID",
-      list: [dialogDropdownContent?.accId],
+      list: [dialogDropdownContent?.account?.id],
       show: true,
     },
     {
       id: "vp-kit-id",
       label: "Kit ID",
-      list: [dialogDropdownContent?.number],
+      list: dialogDropdownContent?.card?.kitId
+        ? [dialogDropdownContent?.card?.kitId]
+        : ["-"],
       show: true,
     },
   ];
@@ -24,19 +26,25 @@ const ViewDialogContent = () => {
   const minidropdownsList = [
     {
       id: "vp-card-no",
-      label: "Cart No",
-      list: [
-        dialogDropdownContent?.number.substring(
-          dialogDropdownContent?.number.length - 4,
-          dialogDropdownContent?.number.length
-        ),
-      ],
+      label: "Card No",
+      list: dialogDropdownContent?.card?.lastFourDigits
+        ? [dialogDropdownContent?.card?.lastFourDigits]
+        : [
+            dialogDropdownContent?.card?.cardNumber
+              ? dialogDropdownContent?.card?.cardNumber.substring(
+                  dialogDropdownContent?.card?.cardNumber.length - 4,
+                  dialogDropdownContent?.card?.cardNumber.length
+                )
+              : "-",
+          ],
       show: true,
     },
     {
       id: "vp-expiry-date",
       label: "Expiry Date",
-      list: ["1025"],
+      list: dialogDropdownContent?.card?.expiryDate
+        ? [dialogDropdownContent?.card?.expiryDate]
+        : ["-"],
       show: true,
     },
   ];

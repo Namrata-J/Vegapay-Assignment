@@ -55,10 +55,16 @@ th, td {
     font-size: 0.8rem;
     padding: 1rem 2rem;
     text-align: start;
+    text-wrap: nowrap;
+}
+
+.vp-table-headings thead {
+  border-radius: 1.2rem 1.2rem 0rem 0rem;
+  background-color: var(--grayShade0);
 }
 
 th {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 td {
@@ -66,8 +72,16 @@ td {
     color: var(--grayShade2);
 }
 
+tbody tr:nth-child(1n) {
+  background-color: var(--white);
+}
+
+tbody tr:nth-child(2n) {
+  background-color: var(--grayShade);
+}
+
 tbody tr:hover {
-  background-color: var(--grayShade0);
+  background-color: var(--secondary-color);
   cursor: pointer;
 }
 
@@ -83,6 +97,8 @@ tbody tr:hover {
 }
 
 .vp-table-footer {
+  border-radius: 0rem 0rem 1.2rem 1.2rem;
+  background-color: var(--grayShade);
   color: var(--grayShade2);
   display: flex;
   justify-content: flex-end;

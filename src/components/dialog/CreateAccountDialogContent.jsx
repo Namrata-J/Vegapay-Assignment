@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import { Dropdown } from "../util";
 
 const CreateAccountDialogContent = () => {
-
-    const [programType, setProgramType] = useState('');
+  const [programType, setProgramType] = useState("");
 
   const dropdownsList = [
     {
@@ -23,7 +22,7 @@ const CreateAccountDialogContent = () => {
       id: "vp-corporate-name",
       label: "Corporate Name",
       list: ["Corp1", "Corp1"],
-      show: programType === "CORPORATE" ? true : false
+      show: programType === "CORPORATE" ? true : false,
     },
   ];
 

@@ -6,7 +6,7 @@ import { useUsers } from "../../context/users-context";
 
 const SearchByMobNumber = () => {
 
-  const { filterUsersTableData} = useUsers();
+  const { getDataForKitTab } = useUsers();
 
   return (
     <div className="vp-searchByMobNumberComp">
@@ -28,7 +28,7 @@ const SearchByMobNumber = () => {
             fontWeight: "bolder",
             fontSize: "0.8rem",
           }}
-          onClick={filterUsersTableData}
+          onClick={getDataForKitTab}
         />
       </div>
     </div>

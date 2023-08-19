@@ -10,14 +10,18 @@ const CardDetailsDialogContent = () => {
     {
       id: "vp-customer-id",
       label: "Customer ID",
-      value: dialogDropdownContent?.customerId,
+      value: dialogDropdownContent?.customer
+        ? dialogDropdownContent?.customer?.customerId
+        : "-",
       type: "text",
       disabled: true,
     },
     {
       id: "vp-name",
       label: "Name on Card",
-      value: dialogDropdownContent?.name,
+      value: dialogDropdownContent?.customer
+        ? dialogDropdownContent?.customer?.fullName
+        : "-",
       type: "text",
       disabled: false,
     },
@@ -27,7 +31,9 @@ const CardDetailsDialogContent = () => {
     {
       id: "vp-card-no",
       label: "Card No",
-      value: dialogDropdownContent?.number,
+      value: dialogDropdownContent?.card
+        ? dialogDropdownContent?.card?.cardNumber
+        : "-",
       type: "text",
       disabled: true,
       placeholder: "",
@@ -35,20 +41,25 @@ const CardDetailsDialogContent = () => {
     {
       id: "vp-expiry-date",
       label: null,
-      value: null,
+      value: dialogDropdownContent?.card
+        ? dialogDropdownContent?.card?.expiryDate
+        : "-",
       type: "date",
       disabled: false,
       placeholder: "Expiry Date",
     },
     {
-      id: "vp-card-no",
+      id: "vp-activation-date",
       label: null,
-      value: null,
+      value: dialogDropdownContent?.card
+        ? dialogDropdownContent?.card?.expiryDate
+        : "-",
       type: "date",
       disabled: false,
       placeholder: "Activation Date",
     },
   ];
+
   return (
     <div className="vp-createDetailsDialogContentComp">
       {dropdownsList &&

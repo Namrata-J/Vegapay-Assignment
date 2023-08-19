@@ -6,6 +6,7 @@ import {
 import React from "react";
 import { Typography } from "../util";
 import { useSideBar } from "../../context";
+import { NavLink } from "react-router-dom";
 
 const SideBar = () => {
   const SIDEBAR_WIDTH = 15;
@@ -40,7 +41,7 @@ const SideBar = () => {
         {sideBarList &&
           sideBarList.length > 0 &&
           sideBarList.map((listItem, index) => (
-            <li key={index}>
+            <NavLink key={index} to="/" className={({isActive, isPending}) => isPending ? "pending" : isActive ? "active" : ""}>
               {listItem?.icon}  
               <Typography
                 text={listItem?.name}
@@ -48,7 +49,7 @@ const SideBar = () => {
                 weight="light"
                 size={0.8}
               />
-            </li>
+            </NavLink>
           ))}
       </ul>
     </div>
