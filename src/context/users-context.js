@@ -13,6 +13,8 @@ const UsersProvider = ({ children }) => {
 
   useEffect(() => {
     getDataForKitTab();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getDataForKitTab = async () => {
