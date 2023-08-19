@@ -2,8 +2,12 @@ import "./card.css";
 import React from "react";
 import { InputBox } from "../util/search/InputBox";
 import { Button } from "../util";
+import { useUsers } from "../../context/users-context";
 
 const SearchByMobNumber = () => {
+
+  const { filterUsersTableData} = useUsers();
+
   return (
     <div className="vp-searchByMobNumberComp">
       <div className="vp-searchByMobNumber-innerComp">
@@ -24,6 +28,7 @@ const SearchByMobNumber = () => {
             fontWeight: "bolder",
             fontSize: "0.8rem",
           }}
+          onClick={filterUsersTableData}
         />
       </div>
     </div>

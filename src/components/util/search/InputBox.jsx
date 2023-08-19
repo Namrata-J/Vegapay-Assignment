@@ -1,10 +1,17 @@
 import "./inputBox.css";
-import { useState } from "react";
 import { FiSearch } from "react-icons/fi";
+import { useUsers } from "../../../context/users-context";
 
-const InputBox = ({ width, height, className, id, label }) => {
-  const [inputValue, setInputValue] = useState("");
+const InputBox = ({
+  width,
+  height,
+  className,
+  id,
+  label,
+}) => {
 
+  const {searchValue, setSearchValue} = useUsers();
+  
   return (
     <div className="vp-inputBoxComp">
       <FiSearch
@@ -17,13 +24,13 @@ const InputBox = ({ width, height, className, id, label }) => {
         className={className}
         id={id}
         type="text"
-        value={inputValue}
+        value={searchValue}
         placeholder="Search by Mobile Number"
         style={{
           width: width,
           height: height,
         }}
-        onChange={(e) => setInputValue(e?.target?.value)}
+        onChange={(e) => setSearchValue(e?.target?.value)}
       />
     </div>
   );
