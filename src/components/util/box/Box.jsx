@@ -11,16 +11,18 @@ const Box = ({
   shadow,
   style,
   children,
-  onClickFn
+  onClickFn,
+  id
 }) => {
   return (
     <div
+    id={id}
       className="vp-boxComp"
       style={{
         borderRadius: roundness,
         backgroundColor: bgColor,
         height: height,
-        width: width,
+        width: width ? width : "100%",
         padding: padding ? padding : `0rem`,
         border: border ? border : "",
         boxShadow: shadow,

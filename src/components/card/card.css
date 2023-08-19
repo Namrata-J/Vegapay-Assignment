@@ -3,6 +3,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 1rem;
+  padding-top: 1rem;
 }
 
 .vp-issueCardComp-cardContainer > *:hover {
@@ -19,7 +20,7 @@
 }
 
 .vp-card-icon {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--primary-color);
 }
 
@@ -85,4 +86,14 @@ tbody tr:hover {
   justify-content: flex-end;
   gap: 1rem;
   padding: 1rem;
+}
+
+@media only screen and (max-width: 510px) {
+  .vp-issueCardComp-cardContainer>*{
+    width: 100% !important;
+  }
+
+  .vp-searchByMobNumber-innerComp {
+    align-items: center;
+  }
 }

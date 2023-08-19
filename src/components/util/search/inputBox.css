@@ -14,4 +14,10 @@
     outline: none;
     flex-grow: 1;
     height: 100%;
+    font-size: 0.8rem;
+}
+
+.vp-inputBoxComp input::placeholder {
+    color: var(--grayShade1);
+    font-size: 0.8rem;
 }

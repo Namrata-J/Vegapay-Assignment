@@ -5,6 +5,7 @@ import { CreateAccountDialogContent } from "./CreateAccountDialogContent";
 import { useDialog, useUsers } from "../../context";
 import { ViewDialogContent } from "./ViewDialogContent";
 import { CardDetailsDialogContent } from "./CardDetailsDialogContent";
+import { WalletDetailsDialogContent } from "./WalletDetailsDialogContent";
 
 const Dialog = () => {
   const { toggleDialogDisplay, dialogType } = useDialog();
@@ -54,7 +55,7 @@ const Dialog = () => {
               <CardDetailsDialogContent />
             )
           ) : (
-            ""
+            <WalletDetailsDialogContent />
           )}
         </div>
         <div className="vp-dialogComp-footer">

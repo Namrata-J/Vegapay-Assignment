@@ -6,11 +6,10 @@ import { useEffect, useState } from "react";
 import { UsersData } from "../../constants/UsersData";
 
 const IssueCard = () => {
-
-const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState([]);
 
   useEffect(() => {
-    setCards(() => Object.keys({...UsersData}))
+    setCards(() => Object.keys({ ...UsersData }));
   }, []);
 
   const { setTabType } = useUsers();
@@ -20,24 +19,21 @@ const [cards, setCards] = useState([]);
       <Typography
         text="New Card Sale"
         subText="Issue New Card"
-        weight="bolder"
+        weight="400"
+        color="var(--primary-color)"
         subTextStyle={{
           color: "var(--grayShade2)",
           fontSize: "0.8rem",
-          fontWeight: "700",
-          padding: "0.3rem 0rem",
+          fontWeight: "400",
+          padding: "0.4rem 0rem",
         }}
       />
-      <div
-        className="vp-issueCardComp-cardContainer"
-        style={{
-          paddingTop: "1rem",
-        }}
-      >
+      <div className="vp-issueCardComp-cardContainer">
         {cards &&
           cards?.length > 0 &&
           cards.map((card, index) => (
             <Box
+              id={"vp-tabs"}
               width={"15rem"}
               height={"auto"}
               roundness={"0.6rem"}
@@ -48,7 +44,12 @@ const [cards, setCards] = useState([]);
             >
               <div className="vp-issueCardComp-card" key={index}>
                 <FaUserCircle className="vp-card-icon" />
-                <Typography text={card} />
+                <Typography
+                  text={card}
+                  size="0.8"
+                  weight="400"
+                  color="var(--primary-color)"
+                />
               </div>
             </Box>
           ))}

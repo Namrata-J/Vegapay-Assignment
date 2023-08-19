@@ -22,10 +22,12 @@ const Header = () => {
       <div className="vp-headerComp-dialogToggleBtn-container">
         <Typography
           text="Alpha User"
-          subText="Last Login"
-          weight="bold"
+          subText="Last Login: 20/05/2023, 12:08: 51"
+          weight="light"
+          color="var(--primary-color)"
+          size="0.9"
           subTextStyle={{
-            fontSize: "0.7rem",
+            fontSize: "0.6rem",
             color: "var(--grayShade1)",
             fontWeight: "bold",
           }}

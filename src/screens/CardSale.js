@@ -14,7 +14,6 @@ import { useDialog, useSideBar } from "../context";
 const CardSale = () => {
   const boxes = [
     {
-      width: "100%",
       height: "auto",
       roundness: "1.2rem",
       bgColor: "var(--white)",
@@ -23,7 +22,6 @@ const CardSale = () => {
       children: <IssueCard />,
     },
     {
-      width: "100%",
       height: "auto",
       roundness: "1.2rem",
       bgColor: "var(--white)",
@@ -32,7 +30,6 @@ const CardSale = () => {
       children: <SearchByMobNumber />,
     },
     {
-      width: "100%",
       height: "auto",
       roundness: "1.2rem",
       bgColor: "var(--grayShade)",

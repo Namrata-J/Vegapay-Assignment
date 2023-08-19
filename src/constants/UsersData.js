@@ -8,6 +8,7 @@ const UsersData = {
         "Email Id",
         "Mobile No.",
         "Card Network",
+        "Activation",
         "Action",
       ],
       users: [
